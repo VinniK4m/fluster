@@ -4,6 +4,8 @@ import 'package:fluster/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'PantallaLog-in.dart';
+
 class PantallaInicial extends StatelessWidget{
   const PantallaInicial({super.key});
   @override
@@ -16,8 +18,11 @@ class PantallaInicial extends StatelessWidget{
         ),
         body: Listcardview(),
         backgroundColor: Colors.grey[300],
-        floatingActionButton: FloatingActionButton(
-            onPressed: (){}, child: Icon(Icons.add)),
+        floatingActionButton: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PantallaLogIn()));
+            }, child: const Text("Autenticarse")),
       );
 
   }
